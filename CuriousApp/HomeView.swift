@@ -10,10 +10,22 @@ import SwiftUI
 struct HomeView: View {
     var body: some View {
         ScrollView {
-            VStack(alignment:.leading, spacing: 24){
-                FeaturedPodcastCard()
-                PodcastCategoriesView()
-                RecentEpisodesView()
+            VStack{
+                ZStack{
+                    VStack{
+                        FeaturedPodcastCard()
+                        
+                        HStack{
+                            PodcastCategoriesView()
+                            
+                            Spacer()
+                        }
+                        
+                        VStack{
+                            RecentEpisodesView()
+                        }
+                    }
+                }
             }
             .padding(.horizontal)
         }
